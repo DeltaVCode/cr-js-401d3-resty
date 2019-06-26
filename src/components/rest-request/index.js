@@ -9,11 +9,8 @@ export default class RestRequest extends React.Component {
     let url = event.target.url.value;
     let method = event.target.method.value;
     superagent(method, url)
-      .then(response => {
-        let header = response.header;
-        let body = response.body;
-        console.log({ header, body });
-      });
+      .then(this.props.onResponse)
+      .catch(err => { throw err });
   }
 
   render() {
