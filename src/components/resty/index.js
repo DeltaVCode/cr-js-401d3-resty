@@ -1,8 +1,14 @@
 import React from 'react';
 
+import RestRequest from '../rest-request';
+
 class Resty extends React.Component {
   render() {
-    return 'Resty!';
+    return (
+      <main>
+        <RestRequest />
+      </main>
+    );
   }
 }
 
